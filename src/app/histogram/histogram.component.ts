@@ -99,7 +99,7 @@ export class HistogramComponent implements OnInit {
         const data = [
           this.veryNegativeTweets,
           this.negativeTweets,
-          this.negativeTweets,
+          this.neutralTweets,
           this.positiveTweets,
           this.veryPositiveTweets
         ];
