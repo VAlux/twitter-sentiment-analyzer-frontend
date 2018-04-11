@@ -1,3 +1,19 @@
-<p>
-  dashboard works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Sentiment Analysis</span>
+
+    <span class="example-spacer"></span>
+
+    <button mat-button>Realtime</button>
+    <button mat-button>Archives</button>
+    <button mat-button>Analytics</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput [(ngModel)]="track" placeholder="Track terms...">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button (click)="trackTerms()">Start Tracking</button>
+</mat-card>

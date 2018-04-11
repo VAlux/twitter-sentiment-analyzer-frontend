@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsModule } from 'ng2-charts';
 import { HistogramComponent } from './histogram/histogram.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
 
 const stompConfig: StompConfig = {
   url: 'ws://127.0.0.1:15674/ws',
@@ -38,7 +41,10 @@ const stompConfig: StompConfig = {
   ],
   imports: [
     BrowserModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule
   ],
   providers: [
     StompService,
