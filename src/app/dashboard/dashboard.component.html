@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Sentiment Analysis</span>
+    <span>Twitter Sentiment Analysis</span>
 
-    <span class="example-spacer"></span>
+    <span class="spacer"></span>
 
     <button mat-button>Realtime</button>
     <button mat-button>Archives</button>
@@ -11,9 +11,14 @@
 </mat-toolbar>
 
 <mat-card>
-  <mat-form-field>
-    <input matInput [(ngModel)]="track" placeholder="Track terms...">
+  <mat-card-title>Streaming control</mat-card-title>
+  <mat-card-subtitle>Start, stop or change tracking terms of realtime tweet streaming</mat-card-subtitle>
+  <mat-form-field class="track-input">
+    <input matInput [(ngModel)]="trackedTerms" placeholder="Track terms...">
   </mat-form-field>
-  <br>
-  <button mat-raised-button (click)="trackTerms()">Start Tracking</button>
+  <mat-card-actions>
+    <button mat-raised-button (click)="startStreaming()">Start Streaming</button>
+    <button mat-raised-button (click)="stopStreaming()">Stop Streaming</button>
+    <button mat-raised-button (click)="trackTerms()">Start Tracking</button>
+  </mat-card-actions>
 </mat-card>

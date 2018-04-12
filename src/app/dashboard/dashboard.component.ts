@@ -9,5 +9,27 @@ import { Message } from '@stomp/stompjs';
 })
 export class DashboardComponent implements OnInit {
 
-  ngOnInit() { }
+  private defaultTrackingTerms = 'twitter';
+
+  public trackedTerms: string;
+
+  ngOnInit() {
+    this.trackedTerms = this.defaultTrackingTerms;
+   }
+
+  trackTerms(): void {
+    if (this.trackedTerms.length <= 0) {
+      console.log('no terms to track specified.');
+      this.trackedTerms = this.defaultTrackingTerms;
+    }
+    console.log('tracking: ' + this.trackedTerms);
+  }
+
+  startStreaming(): void {
+    console.log('Streaming started');
+  }
+
+  stopStreaming(): void {
+    console.log('Streaming stopped');
+  }
 }
