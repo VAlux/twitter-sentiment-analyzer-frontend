@@ -40,6 +40,13 @@ export class HistogramComponent implements OnInit {
     this.veryPositiveTweets
   ], label: 'Tweets amount'}];
 
+  public chartColors: Array<any> = [
+    { // grey
+      backgroundColor: 'rgba(12,12,177,0.2)',
+      borderColor: 'rgba(12,12,200,1)',
+    }
+  ];
+
   public chartClicked(e: any): void {
     console.log(e);
   }

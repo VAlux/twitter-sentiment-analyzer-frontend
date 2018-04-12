@@ -1,9 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Twitter Sentiment Analysis</span>
-
     <span class="spacer"></span>
-
     <button mat-button>Realtime</button>
     <button mat-button>Archives</button>
     <button mat-button>Analytics</button>
@@ -17,8 +15,14 @@
     <input matInput [(ngModel)]="trackedTerms" placeholder="Track terms...">
   </mat-form-field>
   <mat-card-actions>
-    <button mat-raised-button (click)="startStreaming()">Start Streaming</button>
-    <button mat-raised-button (click)="stopStreaming()">Stop Streaming</button>
-    <button mat-raised-button (click)="trackTerms()">Start Tracking</button>
+    <mat-button-toggle-group #group="matButtonToggleGroup" class="toggle">
+      <mat-button-toggle (click)="startStreaming()">
+        Start streaming
+      </mat-button-toggle>
+      <mat-button-toggle (click)="stopStreaming()">
+        Stop streaming
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-progress-bar *ngIf="isStreaming" mode="query" class="progress"></mat-progress-bar>
   </mat-card-actions>
 </mat-card>

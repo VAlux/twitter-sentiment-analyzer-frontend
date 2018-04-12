@@ -9,6 +9,8 @@ import { HistogramComponent } from './histogram/histogram.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StreamingControlService } from './streaming-control/streaming-control.service';
 
 const stompConfig: StompConfig = {
   url: 'ws://127.0.0.1:15674/ws',
@@ -44,10 +46,12 @@ const stompConfig: StompConfig = {
     ChartsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     StompService,
+    StreamingControlService,
     WebstompService,
     {
       provide: StompConfig,
