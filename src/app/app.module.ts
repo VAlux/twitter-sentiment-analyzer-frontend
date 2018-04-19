@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StreamingControlService } from './streaming-control/streaming-control.service';
 
 const stompConfig: StompConfig = {
-  url: 'ws://127.0.0.1:15674/ws',
+  url: 'ws://localhost:15674/ws',
 
   // Headers
   // Typical keys: login, passcode, host
