@@ -13,6 +13,12 @@
   <mat-card-subtitle>Start, stop or change tracking terms of realtime tweet streaming</mat-card-subtitle>
   <mat-form-field class="track-input">
     <input matInput [(ngModel)]="trackedTerms" placeholder="Track terms...">
+    <button mat-button *ngIf="trackedTerms" matSuffix mat-icon-button aria-label="Clear" (click)="trackedTerms=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button mat-button *ngIf="trackedTerms" matSuffix mat-icon-button aria-label="navigate_next" (click)="trackTerms()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
   </mat-form-field>
   <mat-card-actions>
     <mat-button-toggle-group #group="matButtonToggleGroup" class="toggle">
